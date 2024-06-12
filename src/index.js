@@ -1,1 +1,3 @@
-import './data.js';
+import TodoController from "./todo";
+
+TodoController();
