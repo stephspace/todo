@@ -1,3 +1,5 @@
-import TodoController from "./todo";
+//import TodoController from "./todo";
+import { TodoUI } from "./todoUI";
 
-TodoController();
+//TodoController();
+TodoUI();

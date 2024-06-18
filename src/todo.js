@@ -17,9 +17,9 @@ function TodoController(){
         } else if(decision == 2){
                 let currTask = CreateTask();
                 let projChoice = prompt('Enter project title to add: ');
-                let pName = addMethodsToProject(JSON.parse(localStorage.getItem(projChoice)));
+                
+                let project = addMethodsToProject(JSON.parse(localStorage.getItem(projChoice)));
 
-               
                 currTask.setTitle(prompt("Enter title of task: "));
                 currTask.setPriority(prompt("Enter priority level: "));
                 currTask.setDescription(prompt("Enter description: "));
@@ -27,9 +27,8 @@ function TodoController(){
                 prompt("Enter due date month:"), prompt("Enter due date day:") ),
                 "yyyy-MM-dd"));
     
-                pName.addItem(currTask.toJSON());
-                console.log(pName);
-                localStorage.setItem(pName.getTitle(), JSON.stringify(pName.toJSON()));
+                project.addItem(currTask.toJSON());
+                localStorage.setItem(project.getTitle(), JSON.stringify(project.toJSON()));
         }  else if(decision == 3){
             break;
         }

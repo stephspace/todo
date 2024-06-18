@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+header {
+    background-color: #333333;
+    color: rgb(255, 255, 255);
+    display: flex;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.body-content {
+    display: flex;
+    font-size: bold;
+    height: 100%;
+}
+
+.sidebar {
+    background-color: rgb(126, 116, 116);
+    font-size: bold;
+    flex: 1;
+}
+
+.content {
+    background-color: rgb(198, 141, 141);
+    flex: 5;
+}
