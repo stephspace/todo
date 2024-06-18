@@ -1,7 +1,9 @@
-function CreateProject(){
-    let projectTitle     = '';
-    let tasksAmount      =  0;
-    let items            = [];
+function addMethodsToProject(obj){
+    let projectTitle;
+    let tasksAmount;     
+    let items;
+
+    ({projectTitle, tasksAmount, items} = obj);
 
     const getTitle       = ()      => projectTitle;
     const getTasksAmount = ()      => tasksAmount;
@@ -11,7 +13,7 @@ function CreateProject(){
     const setTasksAmount = ()      => tasksAmount = items.length;
     let   addItem        = (item)  => items.push(item);
 
-    const toJSON         = () => ({projectTitle, tasksAmount, items});
+    const toJSON         = ()      => ({projectTitle, tasksAmount, items});
     
     return {
         getTitle,
@@ -24,4 +26,4 @@ function CreateProject(){
     }
 }
 
-export { CreateProject };
+export { addMethodsToProject };

@@ -1,9 +1,11 @@
-function CreateTask(){
+function addMethodsToTask(task){
     let title            = '';
     let priority         = '';
     let description      = '';
     let dueDate          = '';
     let checkList        = '';
+
+    ({title, priority, description, dueDate, checkList} = task);
 
     const getTitle       = () => title;
     const getPriority    = () => priority;
@@ -34,4 +36,4 @@ function CreateTask(){
         }
 }
 
-export { CreateTask };
+export { addMethodsToTask };
