@@ -1,7 +1,13 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -17,12 +23,11 @@ header {
 
 .body-content {
     display: flex;
-    font-size: bold;
-    height: 100%;
+    flex: 1;
 }
 
 .sidebar {
-    background-color: rgb(126, 116, 116);
+    background-color: rgb(82, 82, 82);
     font-size: bold;
     flex: 1;
 }

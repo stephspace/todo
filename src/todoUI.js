@@ -1,13 +1,15 @@
 import './styles.css';
 
 function TodoUI(){
-    const body = document.querySelector('body');
-    const header = document.createElement('header');
-
+    const body        = document.querySelector('body');
+    const header      = document.createElement('header');
     const bodyContent = document.createElement('div');
-
-    const sideBar = document.createElement('div');
-    const content = document.createElement('div');
+    const sideBar     = document.createElement('div');
+    const content     = document.createElement('div');
+    const home     = document.createElement('div');
+    const week     = document.createElement('div');
+    const projects     = document.createElement('div');
+   
 
     sideBar.textContent = 'Test';
     content.textContent = 'Test';
