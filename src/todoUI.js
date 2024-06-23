@@ -22,16 +22,25 @@ function TodoUI(){
 
 function sideBarUI(){
     const sideBar     = document.querySelector('.sidebar');
-    const profileBtn  = document.createElement('button');
-    const todayBtn    = document.createElement('button');
-    const weekBtn     = document.createElement('button');
-    const projectsBtn = document.createElement('button');
+    const profileBtn  = document.createElement('div');
+    const todayBtn    = document.createElement('div');
+    const weekBtn     = document.createElement('div');
+    const projectsBtn = document.createElement('div');
     const addProject  = document.createElement('button');
     const toggleProject = document.createElement('button');
     const addAndToggle =  document.createElement('div');
 
-    addProject.textContent = '+';
-    toggleProject.textContent = '\\/';
+    addProject.classList.add('add-project');
+    addProject.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" 
+                            viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+                            /></svg>`;
+
+    toggleProject.classList.add('chevron');
+    toggleProject.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 19 19"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                            /></svg>`;
+    
+    addAndToggle.classList.add('add-andtoggle');
 
     projectsBtn.classList.add('project-button');
 

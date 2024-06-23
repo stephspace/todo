@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 body {
@@ -27,7 +29,7 @@ header {
 }
 
 .sidebar {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(250, 247, 247);
     font-size: bold;
     flex: 1;
     display: flex;
@@ -35,20 +37,53 @@ header {
 }
 
 .content {
-    background-color: rgb(198, 141, 141);
+    background-color: rgb(254, 254, 254);
     flex: 5;
 }
 
-.sidebar > button {
-    font-size: 15px;
+.sidebar > div {
+    font-size: 20px;
     height: 50px;
     display: flex;
-    align-items: flex-start;
     align-items: center;
+    background-color:rgb(250, 247, 247);
+    border: none;
+    margin: 2px 7px;
+    border-radius: 5px;
     font-weight: bold;
+
 }
 
 .project-button {
     display: flex;
     justify-content: space-between;
+    background-color:rgb(250, 247, 247);
+    border: none;
+    margin: 2px 7px;
+    border-radius: 5px;
+}
+
+.add-project {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: none;
+}
+
+.sidebar > div:hover {
+    background-color: rgb(238, 238, 238); 
+}
+
+.chevron {
+    width: 22px;
+    height: 30px;
+    border: none;
+    background: none;
+}
+
+.add-andtoggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
