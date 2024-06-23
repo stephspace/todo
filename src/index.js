@@ -1,6 +1,7 @@
 //import TodoController from "./todo";
-import { TodoUI, sideBarUI } from "./todoUI";
+import { bodyUI } from "./bodyUI";
+import { sideBarUI } from "./sidebarUI"
 
 //TodoController();
-TodoUI();
-sideBarUI()
+bodyUI();
+sideBarUI();

@@ -81,9 +81,30 @@ header {
     background: none;
 }
 
-.add-andtoggle {
+.add-toggle {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
+}
+
+.today-button,
+.week-button,
+.bell-settings {
+    gap: 8px;
+}
+
+.today-button  > svg,
+.week-button   > svg,
+.profile-icon  > svg {
+    width: 25px;
+}
+
+.profile-icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bell-settings > svg {
+    width: 23px;
 }
