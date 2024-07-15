@@ -1,4 +1,7 @@
 import './styles.css';
+import { sideBarUI } from "./sidebarUI";
+import { addProjectsButton } from "./addbuttonUI";
+import { projectDialog } from './projectDialog';
 
 function bodyUI(){
     const body        = document.querySelector('body');
@@ -10,11 +13,13 @@ function bodyUI(){
     content.classList.add('content');
     bodyContent.classList.add('body-content');
 
-    content.textContent = 'My projects';
-
     bodyContent.appendChild(sideBar);
     bodyContent.appendChild(content);
+    bodyContent.appendChild(projectDialog())
     body.appendChild(bodyContent);   
+
+    sideBarUI();
+    addProjectsButton();
 }
 
 export { bodyUI };

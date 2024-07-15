@@ -1,16 +1,10 @@
-import { CreateProject } from "./project";
+/*import { CreateProject } from "./project";
 import { addMethodsToProject } from "./projectmethodadder";
 import { CreateTask } from "./task";
 import { compareAsc, format } from "date-fns";
 
 function TodoController(){
-    let decision = prompt(`To create project enter 1
-                           To create task enter 2
-                           To exit enter 3`
-                        );
-
-    while(decision >= 1 && decision <= 3){
-        if(decision == 1){
+        if(){
             let projs = CreateProject();
             projs.setTitle(prompt("Enter project title: "));
             localStorage.setItem(projs.getTitle(), JSON.stringify(projs));
@@ -39,3 +33,4 @@ function TodoController(){
 }
 
 export default TodoController;
+*/

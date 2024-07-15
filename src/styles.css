@@ -1,26 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-}
-
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-header {
-    background-color: #ffffff;
-    color: rgb(255, 255, 255);
-    display: flex;
-    height: 55px;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .body-content {
@@ -31,13 +16,13 @@ header {
 .sidebar {
     background-color: rgb(250, 247, 247);
     font-size: bold;
-    flex: 1;
+    width: 280px;
     display: flex;
     flex-direction: column;
 }
 
 .content {
-    background-color: rgb(254, 254, 254);
+    background-color: rgb(255, 255, 255);
     flex: 5;
 }
 
@@ -51,7 +36,6 @@ header {
     margin: 2px 7px;
     border-radius: 5px;
     font-weight: bold;
-
 }
 
 .project-button {
@@ -63,29 +47,31 @@ header {
     border-radius: 5px;
 }
 
+.sidebar > div:hover {
+    background-color: rgb(238, 238, 238); 
+}
+
+/*add project button*/
 .add-project {
-    width: 20px;
+    width: 35px;
     height: 20px;
     border: none;
     background: none;
 }
 
-.sidebar > div:hover {
-    background-color: rgb(238, 238, 238); 
-}
-
-.chevron {
-    width: 22px;
+/*toggle button styling*/
+.toggle-btn {
+    width: 35px;
     height: 30px;
     border: none;
     background: none;
-}
 
+}
+/*add and toggle button styling*/
 .add-toggle {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
 }
 
 .today-button,
@@ -107,4 +93,22 @@ header {
 
 .bell-settings > svg {
     width: 23px;
+}
+
+.project-dialog {
+    border: none;
+    border-radius: 2px;
+    height: 100px;
+    font-weight: bold;
+    width: 200px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.cancel-add  button{
+    font-weight: bold;
+
 }
