@@ -7,6 +7,7 @@ function addProjectsButton(){
     const cancelButton  = document.querySelector('.cancel-project-button');
     const addButton     = document.querySelector('.add-project-button');
     const myProjects    = document.querySelector('.sidebar');
+    const projectSubSection = document.querySelector('.project-subsection');
 
    
     //when clicked show dialog that gets user info and save those in local storage
@@ -26,14 +27,17 @@ function addProjectsButton(){
 
         let project  = document.createElement('div');
         let currProj = CreateProject();
-        currProj.setTitle(title.value);
 
-        project.textContent = currProj.getTitle();
-        myProjects.appendChild(project);
+        if(title.value){
+            currProj.setTitle('#    '+title.value);
 
-        localStorage.setItem(currProj.getTitle(), JSON.stringify(currProj.getItems()));
-        title.value = '';
-        projectDialog.close();
+            project.textContent = currProj.getTitle();
+            projectSubSection.appendChild(project);
+
+            localStorage.setItem(currProj.getTitle(), JSON.stringify(currProj.getItems()));
+            title.value = '';
+            projectDialog.close();
+        }
     });
 }
 
