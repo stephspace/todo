@@ -1,19 +1,19 @@
 function sideBarUI(){
-    const sideBar       = document.querySelector('.sidebar');
+    const sideBar           = document.querySelector('.sidebar');
     
-    const profileBtn    = document.createElement('div');
-    const bellSetting   = document.createElement('div');
-    const todayBtn      = document.createElement('div');
-    const weekBtn       = document.createElement('div');
-    const projectsBtn   = document.createElement('div');
-    const addAndToggle  = document.createElement('div');
+    const profileBtn        = document.createElement('div');
+    const bellSetting       = document.createElement('div');
+    const todayBtn          = document.createElement('div');
+    const weekBtn           = document.createElement('div');
+    const projectsBtn       = document.createElement('div');
+    const addAndToggle      = document.createElement('div');
+    const projectSubSection = document.createElement('div');
 
-    //toggle button that the svg toggle icon is appended 
-    const toggleBtn     = document.createElement('button');
     //add project button that the add svg icon is appended
-    const addProjectBtn = document.createElement('button');
+    const addProjectBtn     = document.createElement('button');
 
     profileBtn.classList.add('profile-icon');
+    projectSubSection.classList.add('project-subsection');
 
     //appends the bell and setting button
     bellSetting.classList.add('bell-settings');
@@ -24,8 +24,6 @@ function sideBarUI(){
     //appends the add and toggle button 
     addAndToggle.classList.add('add-toggle');
     addProjectBtn.classList.add('add-project');
-    toggleBtn.classList.add('toggle-btn');
-
     
     profileBtn.innerHTML    = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
     24 24"><path d="M9,11.75A1.25,1.25 0 0,0 7.75,13A1.25,1.25 0 0,0 9,14.25A1.25,1.25
@@ -53,20 +51,16 @@ function sideBarUI(){
 
     addProjectBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0
     1 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/></svg>`;
-
-    toggleBtn.innerHTML     = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 0 19 19">
-    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>`;
     
     profileBtn.appendChild(bellSetting);
     sideBar.appendChild(profileBtn);
     sideBar.appendChild(todayBtn);
     sideBar.appendChild(weekBtn);
-    addAndToggle.appendChild(addProjectBtn);
-    addAndToggle.appendChild(toggleBtn);
-
     projectsBtn.textContent = 'My Projects';
     projectsBtn.appendChild(addAndToggle);
     sideBar.appendChild(projectsBtn);
+    sideBar.appendChild(projectSubSection);
+    addAndToggle.appendChild(addProjectBtn);
 }
 
 export { sideBarUI };

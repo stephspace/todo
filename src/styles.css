@@ -47,7 +47,7 @@ body {
     border-radius: 5px;
 }
 
-.sidebar > div:hover {
+.sidebar  div:hover {
     background-color: rgb(238, 238, 238); 
 }
 
@@ -59,14 +59,6 @@ body {
     background: none;
 }
 
-/*toggle button styling*/
-.toggle-btn {
-    width: 35px;
-    height: 30px;
-    border: none;
-    background: none;
-
-}
 /*add and toggle button styling*/
 .add-toggle {
     display: flex;
@@ -111,4 +103,33 @@ form {
 .cancel-add  button{
     font-weight: bold;
 
+}
+
+.project-subsection {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 0;
+}
+
+.project-subsection span{
+    font-weight: lighter;
+    color: rgb(105, 105, 105);
+    width: 265px;
+    height: 50px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-project {
+    display: flex;
+    justify-content: space-around;
+}
+
+div #project-delete-button {
+    width: 20px;
+    height: 30px;
+    cursor: pointer;
 }

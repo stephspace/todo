@@ -1,7 +1,8 @@
 import './styles.css';
 import { sideBarUI } from "./sidebarUI";
-import { addProjectsButton } from "./addbuttonUI";
+import { addProjectsButton } from "./addProjectUI";
 import { projectDialog } from './projectDialog';
+import { deleteProject } from "./deleteProject";
 
 function bodyUI(){
     const body        = document.querySelector('body');
@@ -20,6 +21,7 @@ function bodyUI(){
 
     sideBarUI();
     addProjectsButton();
+    deleteProject();
 }
 
 export { bodyUI };
