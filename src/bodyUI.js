@@ -2,7 +2,9 @@ import './styles.css';
 import { sideBarUI } from "./sidebarUI";
 import { addProjectsButton } from "./addProjectUI";
 import { projectDialog } from './projectDialog';
+import { taskDialog } from './taskDialog';
 import { deleteProject } from "./deleteProject";
+import { loadProjectPage } from './projectLoadPage';
 
 function bodyUI(){
     const body        = document.querySelector('body');
@@ -17,11 +19,13 @@ function bodyUI(){
     bodyContent.appendChild(sideBar);
     bodyContent.appendChild(content);
     bodyContent.appendChild(projectDialog())
+    bodyContent.appendChild(taskDialog())
     body.appendChild(bodyContent);   
 
     sideBarUI();
     addProjectsButton();
     deleteProject();
+    loadProjectPage();
 }
 
 export { bodyUI };

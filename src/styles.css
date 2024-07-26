@@ -126,10 +126,17 @@ form {
 .my-project {
     display: flex;
     justify-content: space-around;
+    cursor: pointer;
 }
 
 div #project-delete-button {
     width: 20px;
     height: 30px;
     cursor: pointer;
+}
+
+.project-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: blue
 }

@@ -30,8 +30,8 @@ function CreateTask(){
             setDescription,
             setCheckList,
             setDueDate,
-            toJSON,
-        }
+            toJSON
+        }         
 }
 
 export { CreateTask };

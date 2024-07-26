@@ -1,11 +1,11 @@
 import { CreateProject } from "./project";
 
 function addProjectsButton(){
-    const projectDialog = document.querySelector('.project-dialog');
-    const plusButton    = document.querySelector('.add-project');
-    const title         = document.querySelector('#title');
-    const cancelButton  = document.querySelector('.cancel-project-button');
-    const addButton     = document.querySelector('.add-project-button');
+    const projectDialog     = document.querySelector('.project-dialog');
+    const plusButton        = document.querySelector('.add-project');
+    const title             = document.querySelector('#title');
+    const cancelButton      = document.querySelector('.cancel-project-button');
+    const addButton         = document.querySelector('.add-project-button');
     const projectSubSection = document.querySelector('.project-subsection');
    
     //when clicked show dialog that gets user info and save those in local storage
@@ -23,8 +23,8 @@ function addProjectsButton(){
     addButton.addEventListener('click', (e) => {
         e.preventDefault();
 
-        let project  = document.createElement('span');
-        let projectName  = document.createElement('span');
+        let project     = document.createElement('span');
+        let projectName = document.createElement('span');
         project.classList.add('my-project');
 
         let deleteButton = document.createElement('div');

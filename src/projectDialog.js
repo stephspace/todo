@@ -11,7 +11,6 @@ function projectDialog(){
     label.setAttribute("for","title");
 
     input.setAttribute("id","title");
-    input.setAttribute("id","title");
     input.required           = true;
 
     addButton.textContent    = 'Add';

@@ -1,8 +1,6 @@
 function addMethodsToProject(obj){
-    let projectTitle;    
-    let items;
-
-    ({projectTitle, tasksAmount, items} = obj);
+    let projectTitle = obj.projectName;    
+    let items        = obj.currentProjectTasks;
 
     const getTitle       = ()      => projectTitle;
     const getItems       = ()      => items;
