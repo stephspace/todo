@@ -8,135 +8,115 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.body-content {
-    display: flex;
-    flex: 1;
-}
-
-.sidebar {
+.nav-bar {
     background-color: rgb(250, 247, 247);
-    font-size: bold;
+    font-weight: bold;
+    font-size: 22px;
     width: 280px;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    gap: 15px;
 }
 
-.content {
-    background-color: rgb(255, 255, 255);
-    flex: 5;
+.nav-bar > div:hover:nth-child(-n+4),
+.projects-subsection div:hover {
+   background-color: rgb(228, 228, 228);;
 }
 
-.sidebar > div {
-    font-size: 20px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    background-color:rgb(250, 247, 247);
-    border: none;
-    margin: 2px 7px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.project-button {
+.profile-container {
     display: flex;
     justify-content: space-between;
-    background-color:rgb(250, 247, 247);
-    border: none;
-    margin: 2px 7px;
-    border-radius: 5px;
-}
-
-.sidebar  div:hover {
-    background-color: rgb(238, 238, 238); 
-}
-
-/*add project button*/
-.add-project {
-    width: 35px;
-    height: 20px;
-    border: none;
-    background: none;
-}
-
-/*add and toggle button styling*/
-.add-toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.today-button,
-.week-button,
-.bell-settings {
-    gap: 8px;
-}
-
-.today-button  > svg,
-.week-button   > svg,
-.profile-icon  > svg {
-    width: 25px;
 }
 
 .profile-icon {
-    display: flex;
-    justify-content: space-between;
+    content: url("./profile.svg");
 }
 
-.bell-settings > svg {
-    width: 23px;
+.bell-icon {
+    content: url("./bell.svg");
+}
+
+.view-icon {
+    content: url("./view.svg");
+}
+
+.date-icon {
+    content: url("./date.svg");
+}
+
+.profile-icon,
+.bell-icon,
+.view-icon,
+.date-icon,
+.project-delete-btn,
+.add-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.profile-container,
+.today-container,
+.week-container,
+.my-projects,
+.current-project-container{
+    display: flex;
+    padding: 10px;
+}
+
+.my-projects,
+.current-project-container {
+    justify-content: space-between;
+}
+.add-icon {
+    content: url("./plus.svg");
 }
 
 .project-dialog {
+    border-radius: 5px;
     border: none;
-    border-radius: 2px;
-    height: 100px;
-    font-weight: bold;
+}
+
+#project-name {
     width: 200px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.cancel-project-button {
+    background: rgb(45, 140, 45); 
 }
 
-.cancel-add  button{
-    font-weight: bold;
-
+.add-project-button {
+    background: red;
 }
 
-.project-subsection {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-top: 0;
-}
-
-.project-subsection span{
-    font-weight: lighter;
-    color: rgb(105, 105, 105);
-    width: 265px;
-    height: 50px;
+.add-project-button,
+.cancel-project-button
+ {
+    height: 25px;
     border-radius: 2px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.my-project {
-    display: flex;
-    justify-content: space-around;
-    cursor: pointer;
-}
-
-div #project-delete-button {
-    width: 20px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.project-title {
-    font-size: 30px;
     font-weight: bold;
-    color: blue
+    border: none;
+    color: white;
+    cursor: pointer;
+    flex: 1;
+}
+
+.cancel-add-project {
+    margin-top: 10px;
+    display: flex;
+    gap: 2px;
+}
+
+.current-project-container {
+    font-weight: lighter;
+}
+
+.project-delete-btn {
+    content: url("./close.svg");
+}
+
+.current-project-container,
+.project-delete-btn,
+.add-icon {
+    cursor: pointer;
 }
