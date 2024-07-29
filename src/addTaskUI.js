@@ -1,5 +1,6 @@
 import { CreateTask } from "./createTask";
 import { projectMethodInit } from "./projectMethodInit";
+import { format, compareAsc } from "date-fns";
 
 function getTaskAdder(){
     let taskAdderButton = document.querySelector('.task-header-btn');
@@ -26,11 +27,19 @@ function getTaskAdder(){
         let editTask           = document.createElement("span");
         let details                 = document.createElement("span");
         let deleteButton       = document.createElement("span");
+        let taskDueDate            = document.querySelector("#date");
         let date            = document.createElement("span");
+
+        let dateArray = taskDueDate.value.split("-");
+        console.log("34", dateArray)
 
         editTask.classList.add("task-edit");
         deleteButton.classList.add("delete-task");
-        date.textContent = "date";
+
+        date.textContent = format(new Date(dateArray[0], dateArray[1], dateArray[2]),
+         "MM/dd/yyyy");
+
+        console.log(taskDueDate.value);
         details.textContent = "Details";
         details.classList.add("details");
 
@@ -39,7 +48,6 @@ function getTaskAdder(){
         taskInfoContainer.appendChild(editTask);
         taskInfoContainer.appendChild(deleteButton);
         taskInfoContainer.classList.add("task-info-container")
-
        
         allTasks.classList.add("all-tasks");
 
