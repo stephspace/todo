@@ -1,31 +1,34 @@
 import './styles.css';
-import { sideBarUI } from "./sidebarUI";
-import { addProjectsButton } from "./addProjectUI";
+import { NavBarUI } from "./nav";
 import { projectDialog } from './projectDialog';
 import { taskDialog } from './taskDialog';
-import { deleteProject } from "./deleteProject";
-import { loadProjectPage } from './projectLoadPage';
+import { projectMethodInit } from './projectMethodInit';
+import { deleteProject } from './deleteProject';
+import { addProjectsButton } from './addProjectUI';
+import { loadProjectPage } from './loadProjectTask';
 
 function bodyUI(){
-    const body        = document.querySelector('body');
-    const bodyContent = document.createElement('div');
-    const sideBar     = document.createElement('div');
-    const content     = document.createElement('div');
+    const pageContent   = document.querySelector('body');
+    const navContent    = document.createElement("div")
+    const mainContainer = document.createElement('div');
+    const toDoHeader = document.createElement('div');
+    mainContainer.classList.add("main-container");
 
-    sideBar.classList.add('sidebar');
-    content.classList.add('content');
-    bodyContent.classList.add('body-content');
+    navContent.classList.add('body-content');
 
-    bodyContent.appendChild(sideBar);
-    bodyContent.appendChild(content);
-    bodyContent.appendChild(projectDialog())
-    bodyContent.appendChild(taskDialog())
-    body.appendChild(bodyContent);   
-
-    sideBarUI();
+    toDoHeader.textContent = "Todo List";
+    toDoHeader.classList.add("toDo");
+   
+    navContent.appendChild(NavBarUI());
+    mainContainer.appendChild(toDoHeader);
+    pageContent.appendChild(navContent);
+    pageContent.appendChild(mainContainer);
+    pageContent.appendChild(projectDialog());
+    //pageContent.appendChild(taskDialog());
     addProjectsButton();
     deleteProject();
     loadProjectPage();
+
 }
 
 export { bodyUI };
