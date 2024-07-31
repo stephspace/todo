@@ -8,7 +8,7 @@ function getTaskAdder(){
     let addButton       = document.querySelector('.add-task-button');
     let cancelButton    = document.querySelector('.cancel-task-button');
     let taskNameValue            = document.querySelector('#taskName');
-    let projectName            = document.querySelector('.taskName');
+    let projectName            = document.querySelector('.task-name');
     let taskDescriptionValue    = document.querySelector('#description');
     let allTasks                = document.createElement("div");
 
@@ -29,17 +29,17 @@ function getTaskAdder(){
         let deleteButton       = document.createElement("span");
         let taskDueDate            = document.querySelector("#date");
         let date            = document.createElement("span");
+        let prioritySelect = document.querySelector("#priority-select");
+                            
 
         let dateArray = taskDueDate.value.split("-");
-        console.log("34", dateArray)
-
+    
         editTask.classList.add("task-edit");
         deleteButton.classList.add("delete-task");
 
         date.textContent = format(new Date(dateArray[0], dateArray[1], dateArray[2]),
          "MM/dd/yyyy");
 
-        console.log(taskDueDate.value);
         details.textContent = "Details";
         details.classList.add("details");
 
@@ -54,24 +54,30 @@ function getTaskAdder(){
         if(taskNameValue.value){
             let currentTask    = CreateTask();
            
-            let currentProjectTasks = JSON.parse(localStorage.getItem(projectName));
-            let currentProject  = projectMethodInit({projectName,currentProjectTasks});
+            let currentProjectTasks = JSON.parse(localStorage.getItem(projectName.textContent));
+            let currentProject  = projectMethodInit();
+            currentProject.setProjectTitle(projectName.textContent);
+            currentProject.setProjectTask(currentProjectTasks);
+
+            console.log("56",currentProjectTasks);
+            console.log("60",projectName.textContent);
 
             currentTask.setTitle(taskNameValue.value);
+            currentTask.setPriority(prioritySelect.options[prioritySelect.selectedIndex].text);
+            currentTask.setDescription(taskDescriptionValue.value);
+            currentTask.setDueDate(`${taskDueDate.value}`);
+
             taskTitle.textContent = currentTask.getTitle();
             taskContainer.appendChild(taskTitle);
             taskContainer.appendChild(taskInfoContainer);
             taskContainer.classList.add("task-container")
 
-            currentTask.setDescription(taskDescriptionValue.value);
-            //currentTask.setDueDate();
-            //currentTask.setPriority();
-            //currentTask.setCheckList();
             allTasks.appendChild(taskContainer)
             mainContent.appendChild(allTasks);
-            currentProject.setProjectTask(currentTask.getTaskInfo());
+            currentProject.addProjectTask(currentTask.getTaskInfo());
             localStorage.setItem(currentProject.getProjectTitle(), JSON.stringify(currentProject.getProjectTasks()));
             taskNameValue.value = '';
+            taskDescriptionValue.value = '';
             taskDialog.close();
         }
         e.stopImmediatePropagation();
