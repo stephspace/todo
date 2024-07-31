@@ -67,6 +67,10 @@ function getTaskAdder(){
             currentTask.setDescription(taskDescriptionValue.value);
             currentTask.setDueDate(`${taskDueDate.value}`);
 
+            if(currentTask.getPriority() === 'low') taskContainer.classList.add("low");
+            else if(currentTask.getPriority() === 'medium') taskContainer.classList.add("medium");
+            else if(currentTask.getPriority() === 'high') taskContainer.classList.add("high");
+
             taskTitle.textContent = currentTask.getTitle();
             taskContainer.appendChild(taskTitle);
             taskContainer.appendChild(taskInfoContainer);

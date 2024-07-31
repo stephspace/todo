@@ -1,7 +1,6 @@
 body {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +8,7 @@ body {
 }
 
 .nav-bar {
-    background-color: rgb(250, 247, 247);
+    background-color: rgb(250, 250, 250);
     font-weight: bold;
     font-size: 22px;
     width: 280px;
@@ -59,9 +58,16 @@ body {
 .today-container,
 .week-container,
 .my-projects,
-.current-project-container{
+.current-project-container {
     display: flex;
     padding: 10px;
+}
+
+.today-container,
+.week-container,
+.my-projects,
+.current-project-container {
+    cursor: pointer;
 }
 
 .my-projects,
@@ -120,3 +126,180 @@ body {
 .add-icon {
     cursor: pointer;
 }
+
+.add-project-tasks {
+    content: url("./plus.svg");
+}
+
+.project-title-container {
+    display: flex;
+    align-items: center;
+}
+.project-title-container > span {
+   font-size: 32px;
+}
+
+.task-header-btn {
+    background: url("./plus.svg");
+    width: 35px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+ }
+
+.content {
+    display: flex;
+}
+
+
+.add-project-tasks {
+    background: url("./plus.svg");
+    width: 25px;
+    height: 25px;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-container {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.task-container > span {
+    font-size: 30px;
+}
+
+.toDo {
+    display: flex;
+    justify-content: center;
+    border-bottom: rgb(213, 213, 213) 1.5px solid;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.task-dialog > form {
+   display: flex;
+   flex-direction: column;
+}
+
+#description {
+    width: 430px;
+    height: 250px;
+    resize: none;
+}
+
+.date-priority {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.cancel-task-button {
+    font-weight: bold;
+    background-color: red;
+}
+
+.add-task-button {
+    background-color: green;
+}
+
+.cancel-task-button,
+.add-task-button {
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 85px;
+    cursor: pointer;
+}
+
+.canceladd-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.date-priority {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.task-container {
+    background-color: rgb(250, 250, 250);
+    border-radius: 3px;
+    box-shadow: 2px 2px rgb(197, 197, 197);
+}
+
+.all-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px;
+}
+
+.low {
+    border-left: 10px rgb(24, 103, 24) solid;
+}
+
+.medium {
+    border-left: 10px rgb(205, 205, 117) solid;
+}
+
+.high {
+    border-left: 10px rgb(204, 11, 11) solid;
+}
+
+.delete-task {
+    content: url("./close.svg");
+}
+
+.details {
+    background-color: rgb(208, 208, 208);
+    border-radius: 5px;
+    font-weight: bold;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-edit {
+    content: url("./edit.svg");
+    width: 30px;
+    align-items: center;
+}
+
+.task-info-container {
+    display: flex;
+    justify-content: space-around;
+    height: 20px;
+    width: 250px;
+    font-size: 20px;
+}
+
+.task-edit,
+.details,
+.delete-task {
+    cursor: pointer;
+}
+
+
