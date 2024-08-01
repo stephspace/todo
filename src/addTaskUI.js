@@ -3,14 +3,14 @@ import { projectMethodInit } from "./projectMethodInit";
 import { format, compareAsc } from "date-fns";
 
 function getTaskAdder(){
-    let taskAdderButton = document.querySelector('.task-header-btn');
-    let taskDialog      = document.querySelector('.task-dialog');
-    let addButton       = document.querySelector('.add-task-button');
-    let cancelButton    = document.querySelector('.cancel-task-button');
-    let taskNameValue            = document.querySelector('#taskName');
-    let projectName            = document.querySelector('.task-name');
-    let taskDescriptionValue    = document.querySelector('#description');
-    let allTasks                = document.createElement("div");
+    let taskAdderButton      = document.querySelector('.task-header-btn');
+    let taskDialog           = document.querySelector('.task-dialog');
+    let addButton            = document.querySelector('.add-task-button');
+    let cancelButton         = document.querySelector('.cancel-task-button');
+    let taskNameValue        = document.querySelector('#taskName');
+    let projectName          = document.querySelector('.task-name');
+    let taskDescriptionValue = document.querySelector('#description');
+    let allTasks             = document.createElement("div");
 
     taskAdderButton.addEventListener('click', (e) => {
         e.preventDefault();
@@ -20,47 +20,43 @@ function getTaskAdder(){
     addButton.addEventListener('click', (e) => {
         e.preventDefault();
 
-        let taskContainer = document.createElement("div");
-        let taskTitle     = document.createElement("span");
-        let mainContent   = document.querySelector(".main-container");
-        let taskInfoContainer = document.createElement("div");
-        let editTask           = document.createElement("span");
-        let details                 = document.createElement("span");
-        let deleteButton       = document.createElement("span");
-        let taskDueDate            = document.querySelector("#date");
-        let date            = document.createElement("span");
-        let prioritySelect = document.querySelector("#priority-select");
-                            
+        let taskContainer    = document.createElement("div");
+        let taskTitle        = document.createElement("span");
+        let mainContent      = document.querySelector(".main-container");
+        let taskInfoContainer= document.createElement("div");
+        let editTask         = document.createElement("span");
+        let details          = document.createElement("span");
+        let deleteButton     = document.createElement("span");
+        let taskDueDate      = document.querySelector("#date");
+        let date             = document.createElement("span");
+        let prioritySelect   = document.querySelector("#priority-select");
+                 
+        if(taskNameValue.value && taskDueDate.value){
+            let dateArray = taskDueDate.value.split("-");
+        
+            editTask.classList.add("task-edit");
+            deleteButton.classList.add("delete-task");
 
-        let dateArray = taskDueDate.value.split("-");
-    
-        editTask.classList.add("task-edit");
-        deleteButton.classList.add("delete-task");
+            date.textContent = format(new Date(dateArray[0], dateArray[1], dateArray[2]),
+            "MM/dd/yyyy");
 
-        date.textContent = format(new Date(dateArray[0], dateArray[1], dateArray[2]),
-         "MM/dd/yyyy");
+            details.textContent = "Details";
+            details.classList.add("details");
 
-        details.textContent = "Details";
-        details.classList.add("details");
+            taskInfoContainer.appendChild(details);
+            taskInfoContainer.appendChild(date);
+            taskInfoContainer.appendChild(editTask);
+            taskInfoContainer.appendChild(deleteButton);
+            taskInfoContainer.classList.add("task-info-container")
+        
+            allTasks.classList.add("all-tasks");
 
-        taskInfoContainer.appendChild(details);
-        taskInfoContainer.appendChild(date);
-        taskInfoContainer.appendChild(editTask);
-        taskInfoContainer.appendChild(deleteButton);
-        taskInfoContainer.classList.add("task-info-container")
-       
-        allTasks.classList.add("all-tasks");
-
-        if(taskNameValue.value){
             let currentTask    = CreateTask();
-           
+
             let currentProjectTasks = JSON.parse(localStorage.getItem(projectName.textContent));
             let currentProject  = projectMethodInit();
             currentProject.setProjectTitle(projectName.textContent);
             currentProject.setProjectTask(currentProjectTasks);
-
-            console.log("56",currentProjectTasks);
-            console.log("60",projectName.textContent);
 
             currentTask.setTitle(taskNameValue.value);
             currentTask.setPriority(prioritySelect.options[prioritySelect.selectedIndex].text);
@@ -84,7 +80,7 @@ function getTaskAdder(){
             taskDescriptionValue.value = '';
             taskDialog.close();
         }
-        e.stopImmediatePropagation();
+            e.stopImmediatePropagation();
     });
 
     cancelButton.addEventListener('click', (e) => {
